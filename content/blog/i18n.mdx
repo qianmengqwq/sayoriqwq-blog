@@ -16,7 +16,7 @@ tags: ['nextjs']
 
 总的来说, 在考虑 i18n 的时候有三步:
 
-1. 判断所在区域
+1. 判断所在区域(检测用户语言)
 
 请求头中`Accept-Language`字段
 
@@ -24,12 +24,13 @@ tags: ['nextjs']
 
 2. 标识当前语言
 
-一般使用路由中动态参数, 如`/en`,`/zh`来标识, 也有用 `cookie` 做标识的
+一般使用路由中动态参数, 如`/en`,`/zh`来标识, 也有用 `cookie` 做标识的,还有域名标识
 
-3. 配置相关字典
+3. 配置相关字典(加载翻译)
 
 使用 json 分别存储 key->对应语言的映射
 
+// 缓存/扩展
 <hr />
 
 实现的方式普遍通过`router middleware`, 劫持原有路由,增加对 i18n 的处理,如获取匹配的
@@ -51,6 +52,8 @@ https://nextjs.org/docs/app/building-your-application/routing/internationalizati
 
 https://locize.com/blog/next-app-dir-i18n/
 https://next-intl-docs.vercel.app/docs/getting-started/app-router
+
+
 
 ## ref
 

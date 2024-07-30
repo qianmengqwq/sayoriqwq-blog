@@ -19,7 +19,8 @@
     ],
     "paths": {
       "@/*": ["./*"],
-      "#site/content":["./.velite"]
+      "#site/content":["./.velite"],
+      "#i18n":["./config/i18n.ts"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
