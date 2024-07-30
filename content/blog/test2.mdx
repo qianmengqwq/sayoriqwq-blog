@@ -1,14 +1,60 @@
 ---
-title: Hello World
-description: this is my first post
-date: 2024-6-27
+title: nextjs 实现i18n
+description: i18n
+date: 2024-7-30
 published: true
+tags: ['nextjs']
 ---
 
-<Callout type='danger'>
-Hello callout
-</Callout>
+## i18n
 
-# Hello World
-welcome to my blog
+概念: 国际化(Internationalization)、本地化(localization)
 
+国际化是本地化的一部分，本地化还包括针对性的翻译调整/补丁
+
+## 原理
+
+总的来说, 在考虑 i18n 的时候有三步:
+
+1. 判断所在区域
+
+请求头中`Accept-Language`字段
+
+使用`negotiator`、`@formatjs/intl-localematcher`库
+
+2. 标识当前语言
+
+一般使用路由中动态参数, 如`/en`,`/zh`来标识, 也有用 `cookie` 做标识的
+
+3. 配置相关字典
+
+使用 json 分别存储 key->对应语言的映射
+
+<hr />
+
+实现的方式普遍通过`router middleware`, 劫持原有路由,增加对 i18n 的处理,如获取匹配的
+locale,重定向等,或者说产品大部分用户都来自同一地区,也可以把路由的参数隐藏掉,总之在这里处理相关逻辑是比较好的
+
+## 实现方式
+
+### 手写
+
+官网的例子简单可用
+
+https://nextjs.org/docs/app/building-your-application/routing/internationalization
+
+### 库
+
+流行的有 react-i18next(🌟)和 next-intl
+
+提供 config 之后,利用库导出分别适用 rsc 和 rcc 的方法
+
+https://locize.com/blog/next-app-dir-i18n/
+https://next-intl-docs.vercel.app/docs/getting-started/app-router
+
+## ref
+
+https://nextjs.org/docs/app/building-your-application/routing/internationalization
+https://github.com/vercel/next.js/tree/canary/examples/app-dir-i18n-routing
+https://locize.com/blog/next-app-dir-i18n/
+https://github.com/i18next/next-app-dir-i18next-example-ts.git

@@ -6,6 +6,7 @@ import { Icons } from './icons'
 import { MainNav } from './main-nav'
 import { MobileNav } from './mobile-nav'
 import { ModeToggle } from './mode-toggle'
+import LocaleSwitcher from './locale-switcher'
 
 export function SiteHeader() {
   return (
@@ -45,6 +46,7 @@ export function SiteHeader() {
               </div>
             </Link>
             <ModeToggle></ModeToggle>
+            <LocaleSwitcher></LocaleSwitcher>
             <MobileNav></MobileNav>
           </nav>
         </div>
