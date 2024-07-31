@@ -8,6 +8,7 @@ import { siteConfig } from '@/config/site'
 import { SiteFooter } from '@/components/site-footer'
 import { dir } from 'i18next'
 import { i18n, type Locale } from '@/config/i18n'
+import { WebVitals } from '@/components/webVitals'
 
 const fontSans = FontSans({
   subsets: ['latin'],
@@ -46,6 +47,7 @@ export default function RootLayout({
           fontSans.variable
         )}
       >
+        <WebVitals />
         <Providers>
           <div className="relative flex flex-col min-h-dvh bg-background">
             <SiteHeader />

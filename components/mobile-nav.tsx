@@ -12,54 +12,37 @@ export function MobileNav() {
   const [open, setOpen] = useState(false)
 
   return (
-    <Sheet
-      open={open}
-      onOpenChange={setOpen}
-    >
+    <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger asChild>
-        <Button
-          variant='outline'
-          className='w-10 px-0 sm:hidden'
-        >
-          <Menu className='h-5 w-5' />
-          <span className='sr-only'>Toggle Theme</span>
+        <Button variant="outline" className="w-10 px-0 sm:hidden">
+          <Menu className="h-5 w-5" />
+          <span className="sr-only">Toggle Theme</span>
         </Button>
       </SheetTrigger>
-      <SheetContent side='right'>
+      <SheetContent side="right">
         <MobileLink
-          href='/'
-          className='flex items-center'
+          href="/"
+          className="flex items-center"
           onOpenChange={setOpen}
         >
-          <Icons.logo className='mr-2 h-4 w-4' />
-          <span className='font-bold'>{siteConfig.name}</span>
+          <Icons.logo className="mr-2 h-4 w-4" />
+          <span className="font-bold">{siteConfig.name}</span>
         </MobileLink>
-        <div className='flex flex-col gap-3 mt-3'>
-          <MobileLink
-            onOpenChange={setOpen}
-            href='/blog'
-          >
+        <div className="flex flex-col gap-3 mt-3">
+          <MobileLink onOpenChange={setOpen} href="/blog">
             Blog
           </MobileLink>
-          <MobileLink
-            onOpenChange={setOpen}
-            href='/about'
-          >
+          <MobileLink onOpenChange={setOpen} href="/about">
             About
           </MobileLink>
-          <Link
-            target='_blank'
-            rel='noreferer'
-            href={siteConfig.links.github}
-          >
+          <Link target="_blank" rel="noreferer" href={siteConfig.links.github}>
             GitHub
           </Link>
-          <Link
-            target='_blank'
-            rel='noreferer'
-            href={siteConfig.links.twitter}
-          >
+          <Link target="_blank" rel="noreferer" href={siteConfig.links.twitter}>
             Twitter
+          </Link>
+          <Link target="_blank" rel="noreferer" href={siteConfig.links.qq}>
+            qq
           </Link>
         </div>
       </SheetContent>

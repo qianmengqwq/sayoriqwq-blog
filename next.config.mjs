@@ -1,13 +1,20 @@
 import { build } from 'velite'
+import bundleAnalyzer from '@next/bundle-analyzer'
+import { codeInspectorPlugin } from 'code-inspector-plugin'
+
+const withBundleAnalyzer = bundleAnalyzer({
+  enabled: process.env.ANALYZE === 'true',
+})
 
 /** @type {import('next').NextConfig} */
-export default {
+export default withBundleAnalyzer({
   // othor next config here...
-  webpack: config => {
+  webpack: (config) => {
     config.plugins.push(new VeliteWebpackPlugin())
+    config.plugins.push(codeInspectorPlugin({ bundler: 'webpack' }))
     return config
-  }
-}
+  },
+})
 
 class VeliteWebpackPlugin {
   static started = false
