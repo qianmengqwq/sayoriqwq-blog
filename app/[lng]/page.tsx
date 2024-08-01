@@ -6,6 +6,7 @@ import { posts } from '#site/content'
 import { PostItem } from '@/components/post-item'
 import { type Locale } from '@/config/i18n'
 import { useTranslation } from '../i18n/locales/server'
+import { comicFont } from '@/config/fonts'
 
 interface HomeProps {
   params: {
@@ -18,13 +19,15 @@ export default async function Home({ params: { lng } }: HomeProps) {
   const latestPosts = sortPosts(posts).slice(0, 2)
   return (
     <>
-      <section className="space-y-6 pb-8 pt-6 md:pb-12 md:pt-10 lg:py-32">
+      <section className="w-full h-screen flex items-center">
         <div className="container flex flex-col gap-4 text-center">
-          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl">
-            hello,I'm sayoriqwq
+          <h1
+            className={`text-3xl sm:text-5xl md:text-6xl lg:text-7xl ${comicFont.className}`}
+          >
+            sayoriqwq
           </h1>
           <p className="max-w-[42rem] mx-auto text-muted-foreground sm:text-xl text-balance">
-            welcome to my blog! Built using Next.js and Tailwind CSS.
+            bittersweet life
             {t('like')}
           </p>
           <div className="flex flex-col gap-4 justify-center sm:flex-row">
@@ -48,7 +51,7 @@ export default async function Home({ params: { lng } }: HomeProps) {
           </div>
         </div>
       </section>
-      <section className="container flex flex-col max-w-4xl py-6 lg:py-10 space-y-6 mt-60">
+      {/* <section className="container flex flex-col max-w-4xl py-6 lg:py-10 space-y-6 mt-60">
         <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-blank">
           Nowadays
         </h2>
@@ -71,7 +74,7 @@ export default async function Home({ params: { lng } }: HomeProps) {
               )
           )}
         </ul>
-      </section>
+      </section> */}
     </>
   )
 }
