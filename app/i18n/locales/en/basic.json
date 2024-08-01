@@ -1,3 +1,7 @@
 {
-  "like": "Like"
+  "like": "Like",
+  "latestPosts": "latestPosts",
+  "notes": "notes",
+  "readMore": "read more",
+  "aboutMe": "About Me"
 }

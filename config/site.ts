@@ -1,11 +1,11 @@
 export const siteConfig = {
-  name: `sayoriqwq's blog`,
+  name: `sayoriqwq`,
   url: 'https://sayoriqwq.com',
-  description: 'nextjs14 velite tailwind shadcn',
+  description: 'bittersweet life',
   author: 'sayoriqwq',
   links: {
     qq: '',
-    github: 'https://sayoriqwq.site',
+    github: 'https://github.com/qianmengqwq',
     twitter: 'https://sayoriqwq.site',
   },
   // TODO: add social banner

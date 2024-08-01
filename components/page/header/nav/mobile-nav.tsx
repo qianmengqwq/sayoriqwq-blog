@@ -1,12 +1,12 @@
 'use client'
 
-import { Sheet, SheetContent, SheetTrigger } from './ui/sheet'
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import { useState } from 'react'
-import { Button } from './ui/button'
+import { Button } from '@/components/ui/button'
 import { Menu } from 'lucide-react'
 import Link, { LinkProps } from 'next/link'
 import { useRouter } from 'next/navigation'
-import { Icons } from './icons'
+import { Icons } from '@/components/icons'
 import { siteConfig } from '@/config/site'
 export function MobileNav() {
   const [open, setOpen] = useState(false)

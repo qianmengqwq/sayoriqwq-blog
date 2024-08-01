@@ -1,5 +1,5 @@
 import * as runtime from 'react/jsx-runtime'
-import Callout from './callout'
+import Callout from './mdx-components/callout'
 
 const useMDXComponent = (code: string) => {
   const fn = new Function(code)

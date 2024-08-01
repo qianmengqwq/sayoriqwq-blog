@@ -6,12 +6,12 @@ const { defaultLocale, locales, cookieName } = i18n
 
 acceptLanguage.languages(locales)
 
-export const config = {
-  // matcher: '/:lng*'
-  matcher: [
-    '/((?!api|_next/static|_next/image|assets|favicon.ico|sw.js|site.webmanifest).*)',
-  ],
-}
+// export const config = {
+//   // matcher: '/:lng*'
+//   matcher: [
+//     '/((?!api|_next/static|_next/image|assets|favicon.ico|sw.js|site.webmanifest).*)',
+//   ],
+// }
 
 export function middleware(req: NextRequest) {
   let lng
@@ -23,7 +23,8 @@ export function middleware(req: NextRequest) {
   // Redirect if lng in path is not supported
   if (
     !locales.some((loc) => req.nextUrl.pathname.startsWith(`/${loc}`)) &&
-    !req.nextUrl.pathname.startsWith('/_next')
+    !req.nextUrl.pathname.startsWith('/_next') &&
+    !req.nextUrl.pathname.startsWith('/imgs')
   ) {
     return NextResponse.redirect(
       new URL(`/${lng}${req.nextUrl.pathname}`, req.url)
