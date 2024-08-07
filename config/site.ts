@@ -7,9 +7,12 @@ export const siteConfig = {
     qq: '',
     github: 'https://github.com/qianmengqwq',
     twitter: 'https://sayoriqwq.site',
+    bilibili: '',
+    neteaseCloudMusic: '',
+    wechat: '',
   },
   // TODO: add social banner
   socialBanner: '',
-}
+};
 
-export type SiteConfig = typeof siteConfig
+export type SiteConfig = typeof siteConfig;
